@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function TextForm(props) {
+  const [text, setText] = useState("default value");
+
   return (
     <>
       <h1>{props.heading}</h1>
@@ -10,9 +12,21 @@ function TextForm(props) {
           placeholder="Leave a comment here"
           id="myBox"
           rows="3"
+          value={text}
+          onChange={(event) => {
+            setText(event.target.value);
+          }}
         ></textarea>
       </div>
-      <button className="btn btn-primary">Convert to upper case</button>
+      <button
+        className="btn btn-primary"
+        onClick={() => {
+          //change text to upper case
+          setText(text.toLocaleUpperCase());
+        }}
+      >
+        Convert to upper case
+      </button>
     </>
   );
 }
