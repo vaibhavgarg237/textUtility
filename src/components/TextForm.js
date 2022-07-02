@@ -1,20 +1,19 @@
 import React from "react";
 
-function TextForm() {
+function TextForm(props) {
   return (
-    <div>
+    <>
+      <h1>{props.heading}</h1>
       <div className="mb-3">
-        <label for="exampleFormControlInput1" className="form-label">
-          Email address
-        </label>
-        <input
-          type="email"
+        <textarea
           className="form-control"
-          id="exampleFormControlInput1"
-          placeholder="name@example.com"
-        />
+          placeholder="Leave a comment here"
+          id="myBox"
+          rows="3"
+        ></textarea>
       </div>
-    </div>
+      <button className="btn btn-primary">Convert to upper case</button>
+    </>
   );
 }
 
