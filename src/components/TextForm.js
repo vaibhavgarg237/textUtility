@@ -31,6 +31,7 @@ function TextForm(props) {
           className="btn btn-primary mx-1"
           onClick={() => {
             setText(text.toLocaleUpperCase());
+            props.showAlert("Converted to upper case", "success");
           }}
         >
           Convert to upper case
@@ -39,6 +40,7 @@ function TextForm(props) {
           className="btn btn-primary mx-1"
           onClick={() => {
             setText(text.toLocaleLowerCase());
+            props.showAlert("Converted to lower case", "success");
           }}
         >
           Convert to lower case
@@ -47,6 +49,7 @@ function TextForm(props) {
           className="btn btn-primary mx-1"
           onClick={() => {
             setText("");
+            props.showAlert("Clear Text", "success");
           }}
         >
           Clear Text
