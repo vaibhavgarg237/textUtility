@@ -3,6 +3,14 @@ import React, { useState } from "react";
 function TextForm(props) {
   const [text, setText] = useState("default value");
 
+  const count = (txt) => {
+    let c = 0;
+    txt.split(" ").map((item) => {
+      return item ? c++ : c;
+    });
+    return c;
+  };
+
   return (
     <div
       style={{
@@ -58,7 +66,8 @@ function TextForm(props) {
       <div className="container my-3">
         <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} Words, {text.length} letters
+          {count(text)}
+          Words, {text.length} letters
         </p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "Enter text to preview it here"}</p>
