@@ -4,7 +4,11 @@ function TextForm(props) {
   const [text, setText] = useState("default value");
 
   return (
-    <>
+    <div
+      style={{
+        color: `${props.mode === `dark` ? `white` : `black`}`,
+      }}
+    >
       <div className="container">
         <h1>{props.heading}</h1>
         <div className="mb-3">
@@ -16,6 +20,10 @@ function TextForm(props) {
             value={text}
             onChange={(event) => {
               setText(event.target.value);
+            }}
+            style={{
+              backgroundColor: `${props.mode === `dark` ? `#042743` : `white`}`,
+              color: `${props.mode === `dark` ? `white` : `black`}`,
             }}
           ></textarea>
         </div>
@@ -50,9 +58,9 @@ function TextForm(props) {
           {text.split(" ").length} Words, {text.length} letters
         </p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter text to preview it here"}</p>
       </div>
-    </>
+    </div>
   );
 }
 
