@@ -4,12 +4,47 @@ function TextForm(props) {
   const [text, setText] = useState("default value");
 
   const count = (txt) => {
-    let c = 0;
-    txt.split(" ").map((item) => {
-      return item ? c++ : c;
-    });
-    return c;
+    // let c = 0;
+    // txt.split(" ").map((item) => {
+    //   return item ? c++ : c;
+    // });
+    // return c;
+    return txt.split(" ").filter((el) => el !== 0).length;
   };
+
+  function toUpper() {
+    setText(text.toLocaleUpperCase());
+    props.showAlert("Converted to upper case", "success");
+  }
+
+  function toLowerCase() {
+    setText(text.toLocaleLowerCase());
+    props.showAlert("Converted to lower case", "success");
+  }
+
+  function handleCopy() {
+    document.getElementById("myBox").select();
+    navigator.clipboard.writeText(text);
+    document.getSelection.removeAllRanges();
+    props.showAlert("Copy Text", "success");
+  }
+
+  function clearText() {
+    setText("");
+    props.showAlert("Clear Text", "success");
+  }
+
+  function removeExtraSpaces() {
+    let str = "";
+    text.split(" ").map((item) => {
+      if (item) {
+        str = str + " " + item;
+      }
+      return str;
+    });
+    setText(str);
+    props.showAlert("Remove extra spaces", "success");
+  }
 
   return (
     <div
@@ -36,31 +71,39 @@ function TextForm(props) {
           ></textarea>
         </div>
         <button
-          className="btn btn-primary mx-1"
-          onClick={() => {
-            setText(text.toLocaleUpperCase());
-            props.showAlert("Converted to upper case", "success");
-          }}
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={toUpper}
         >
           Convert to upper case
         </button>
         <button
-          className="btn btn-primary mx-1"
-          onClick={() => {
-            setText(text.toLocaleLowerCase());
-            props.showAlert("Converted to lower case", "success");
-          }}
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={toLowerCase}
         >
           Convert to lower case
         </button>
         <button
-          className="btn btn-primary mx-1"
-          onClick={() => {
-            setText("");
-            props.showAlert("Clear Text", "success");
-          }}
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={clearText}
         >
           Clear Text
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCopy}
+        >
+          Copy Text
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={removeExtraSpaces}
+        >
+          Remove extra spaces
         </button>
       </div>
       <div className="container my-3">

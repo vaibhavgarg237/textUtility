@@ -6,7 +6,6 @@ import TextForm from "./components/TextForm.js";
 import Alert from "./components/Alert";
 import About from "./components/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import ReactDOM from "react-dom/client";
 
 function App() {
   const [darkMode, setDarkMode] = useState(`light`);
