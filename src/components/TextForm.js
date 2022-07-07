@@ -9,7 +9,7 @@ function TextForm(props) {
     //   return item ? c++ : c;
     // });
     // return c;
-    return txt.split(" ").filter((el) => el !== 0).length;
+    return txt.split(/\s+/).filter((el) => el !== 0).length;
   };
 
   function toUpper() {
@@ -23,9 +23,7 @@ function TextForm(props) {
   }
 
   function handleCopy() {
-    document.getElementById("myBox").select();
     navigator.clipboard.writeText(text);
-    document.getSelection.removeAllRanges();
     props.showAlert("Copy Text", "success");
   }
 
