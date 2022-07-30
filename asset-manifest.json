@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/toUpper-APP/static/css/main.31d6cfe0.css",
-    "main.js": "/toUpper-APP/static/js/main.bf832b12.js",
-    "static/js/787.28cb0dcd.chunk.js": "/toUpper-APP/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/toUpper-APP/index.html",
-    "main.bf832b12.js.map": "/toUpper-APP/static/js/main.bf832b12.js.map",
-    "787.28cb0dcd.chunk.js.map": "/toUpper-APP/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/static/css/main.31d6cfe0.css",
+    "main.js": "/static/js/main.8d7e6136.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/index.html",
+    "main.8d7e6136.js.map": "/static/js/main.8d7e6136.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.bf832b12.js"
+    "static/js/main.8d7e6136.js"
   ]
 }
